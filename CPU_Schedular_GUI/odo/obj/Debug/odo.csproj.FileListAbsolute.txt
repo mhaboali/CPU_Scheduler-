@@ -25,3 +25,6 @@ C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.csproj
 C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.Form1.resources
 C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.Properties.Resources.resources
 C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.csproj.GenerateResource.Cache
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\bin\Debug\odo.exe.config
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Debug\odo.exe
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Debug\odo.pdb

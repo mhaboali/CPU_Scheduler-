@@ -1,0 +1,9 @@
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\bin\Release\odo.exe.config
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\bin\Release\odo.exe
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\bin\Release\odo.pdb
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Release\odo.csprojResolveAssemblyReference.cache
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Release\odo.Form1.resources
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Release\odo.Properties.Resources.resources
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Release\odo.csproj.GenerateResource.Cache
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Release\odo.exe
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Release\odo.pdb
