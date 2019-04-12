@@ -28,3 +28,9 @@ C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.csproj
 F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\bin\Debug\odo.exe.config
 F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Debug\odo.exe
 F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Debug\odo.pdb
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\bin\Debug\odo.exe
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\bin\Debug\odo.pdb
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Debug\odo.csprojResolveAssemblyReference.cache
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Debug\odo.Form1.resources
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Debug\odo.Properties.Resources.resources
+F:\FOE\CSE'19\Second Term\OS\CPU_Scheduler-\CPU_Schedular_GUI\odo\obj\Debug\odo.csproj.GenerateResource.Cache

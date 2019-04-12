@@ -51,7 +51,11 @@ namespace odo
               priors = textBox3.Text;
               arrivals = arriv.Split(',').Select(n => Convert.ToInt32(n)).ToArray();
               Durs = Durss.Split(',').Select(n => Convert.ToInt32(n)).ToList();
-              priorities = priors.Split(',').Select(n => Convert.ToInt32(n)).ToList();
+              try
+              {
+                  priorities = priors.Split(',').Select(n => Convert.ToInt32(n)).ToList();
+              }
+              catch (Exception ex) { }
               numProcesses = input;
         }
 
@@ -328,20 +332,21 @@ namespace odo
             s = q.arrival[0];
             int x = (q.dur[0] - q.arrival[0]) / 2;
             Font font1 = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Point);
+            int prev_s = 0;
            for (int i = 0; i <q.number; i++)
            {
                if (i != 0) x = (q.dur[i] - q.arrival[i-1]) / 2;
                s += q.dur[i];
                string text1 = q.flag[i];
-               Rectangle rect = new Rectangle(0, 0, s, 100);
+               Rectangle rect = new Rectangle(0, 0, s * 10, 50);
                System.Drawing.Graphics gravicsObject;
                gravicsObject = this.CreateGraphics();
                Pen blackPen = new Pen(System.Drawing.Color.Black, 3);
                gravicsObject.DrawRectangle(blackPen, rect);
-              gravicsObject.DrawString(text1, font1, Brushes.Blue,s-40,10);
+              gravicsObject.DrawString(text1, font1, Brushes.Blue,(s + prev_s) * 10 - 30,10);
                string f = ""+s;
                string ff = "" + q.avr_time;      
-               gravicsObject.DrawString(f, font1, Brushes.Blue, s, 100);
+               gravicsObject.DrawString(f, font1, Brushes.Blue, s*10-6, 50);
                if (i == 0)
                {
                    gravicsObject.DrawString("AVR_waiting_time :", font1, Brushes.Blue, 50, 270);
@@ -359,20 +364,21 @@ namespace odo
             RR q = new RR(input,100, Durs, arrivals_);
             q.sets();
             s = q.arrival[0];
+            int prev_s = 0;
             for (int i = 0; i < q.j; i++)
             {
                 s += q.plot[i];
                 string text1 = q.flag[i];
-                Rectangle rect = new Rectangle(0, 0, s, 200);
+                Rectangle rect = new Rectangle(0, 0, s * 10, 50);
                 System.Drawing.Graphics gravicsObject;
                 gravicsObject = this.CreateGraphics();
-                Pen blackPen = new Pen(System.Drawing.Color.Black, 5);
+                Pen blackPen = new Pen(System.Drawing.Color.Black, 3);
                 Font font1 = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Point);
                 gravicsObject.DrawRectangle(blackPen, rect);
-                gravicsObject.DrawString(text1, font1, Brushes.Blue, (s -30), 10);
+                gravicsObject.DrawString(text1, font1, Brushes.Blue, (s+ prev_s) * 10 -30, 10);
                 string f = "" + s;
                 string ff = "" + q.avr_time;      
-                gravicsObject.DrawString(f, font1, Brushes.Blue, s, 200);
+                gravicsObject.DrawString(f, font1, Brushes.Blue, s*10 -6, 50);
                 if (i == 0)
                 {
                     gravicsObject.DrawString("AVR_waiting_time :", font1, Brushes.Blue, 50, 270);
