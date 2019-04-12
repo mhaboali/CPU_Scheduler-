@@ -1,0 +1,27 @@
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\bin\Debug\odo.exe.config
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\obj\Debug\odo.csprojResolveAssemblyReference.cache
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\obj\Debug\odo.Form1.resources
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\obj\Debug\odo.Properties.Resources.resources
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\obj\Debug\odo.csproj.GenerateResource.Cache
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\bin\Debug\odo.exe
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\bin\Debug\odo.pdb
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\obj\Debug\odo.exe
+c:\users\m\documents\visual studio 2013\Projects\odo\odo\obj\Debug\odo.pdb
+H:\odo\odo\bin\Debug\odo.exe.config
+H:\odo\odo\obj\Debug\odo.exe
+H:\odo\odo\obj\Debug\odo.pdb
+H:\odo\odo\bin\Debug\odo.exe
+H:\odo\odo\bin\Debug\odo.pdb
+H:\odo\odo\obj\Debug\odo.csprojResolveAssemblyReference.cache
+H:\odo\odo\obj\Debug\odo.Form1.resources
+H:\odo\odo\obj\Debug\odo.Properties.Resources.resources
+H:\odo\odo\obj\Debug\odo.csproj.GenerateResource.Cache
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\bin\Debug\odo.exe.config
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.exe
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.pdb
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\bin\Debug\odo.exe
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\bin\Debug\odo.pdb
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.Form1.resources
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.Properties.Resources.resources
+C:\Users\user\Documents\Visual Studio 2013\Projects\odo\odo\obj\Debug\odo.csproj.GenerateResource.Cache
