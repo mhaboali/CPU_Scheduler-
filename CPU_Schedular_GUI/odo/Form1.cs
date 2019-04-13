@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,53 +10,60 @@ using System.Windows.Forms;
 
 namespace odo
 {
-    public partial class Form1 : Form 
+    public partial class Form1 : Form
     {
-       public  int[] arrivals;
-       List<int> Durs, priorities;
-       int s , j=0, input,Q, numProcesses;
-       public string arriv, Durss,priors;
-
+        public int[] arrivals;
+        List<int> Durs, priorities;
+        int s, j = 0, input, Q, numProcesses;
+        public string arriv, Durss, priors;
+        public int qunt;
         public Form1()
         {
             InitializeComponent();
         }
-       
-         private void textBox1_TextChanged(object sender, EventArgs e)
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             button1.Enabled = true;
         }
-         private void textBox2_TextChanged(object sender, EventArgs e)
-         {
-             button1.Enabled = true;
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
 
-         }
-         private void textBox3_TextChanged(object sender, EventArgs e)
-         {
-             button1.Enabled = true;
+        }
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
 
-         }
-         private void textBox4_TextChanged(object sender, EventArgs e)
-         {
-             button1.Enabled = true;
+        }
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
 
-         }
+        }
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+            button1.Enabled = true;
+
+        }
         public void button1_Click(object sender, EventArgs e)
-         {
+        {
             //Enter button
             // input => number of processes
-              input = int.Parse(textBox2.Text);
-              arriv = textBox1.Text;
-              Durss = textBox4.Text;
-              priors = textBox3.Text;
-              arrivals = arriv.Split(',').Select(n => Convert.ToInt32(n)).ToArray();
-              Durs = Durss.Split(',').Select(n => Convert.ToInt32(n)).ToList();
-              try
-              {
-                  priorities = priors.Split(',').Select(n => Convert.ToInt32(n)).ToList();
-              }
-              catch (Exception ex) { }
-              numProcesses = input;
+            input = int.Parse(textBox2.Text);
+            qunt = int.Parse(textBox5.Text);
+            arriv = textBox1.Text;
+            Durss = textBox4.Text;
+            priors = textBox3.Text;
+            arrivals = arriv.Split(',').Select(n => Convert.ToInt32(n)).ToArray();
+            Durs = Durss.Split(',').Select(n => Convert.ToInt32(n)).ToList();
+            try
+            {
+                priorities = priors.Split(',').Select(n => Convert.ToInt32(n)).ToList();
+            }
+            catch (Exception ex) { }
+            numProcesses = input;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -107,7 +114,7 @@ namespace odo
             }
             return true;
         }
-        static Tuple<int,int> getNextFinishingTask(int numberProcesses, Dictionary<int, Queue<int>> map)
+        static Tuple<int, int> getNextFinishingTask(int numberProcesses, Dictionary<int, Queue<int>> map)
         {
             int nextPid;
             var temp = new List<int>(numberProcesses);
@@ -124,9 +131,10 @@ namespace odo
                 return Tuple.Create(-1, -1);
             nextPid = temp.ToList().IndexOf(minVal);
             map[nextPid].Dequeue();
-            return Tuple.Create(nextPid,minVal);
+            return Tuple.Create(nextPid, minVal);
         }
-        static bool displayAll(int numberProcesses, Dictionary<int, Queue<int>> finishing){
+        static bool displayAll(int numberProcesses, Dictionary<int, Queue<int>> finishing)
+        {
             for (int p = 0; p < numberProcesses; p++)
             {
                 if (finishing[p].Count != 0)
@@ -235,7 +243,7 @@ namespace odo
                 string f = "" + s;
                 int avg_waiting = waiting.Sum() / waiting.Length;
                 string ff = avg_waiting.ToString(); //+ q.avr_time;
-                gravicsObject.DrawString(f, font1, Brushes.Blue, s * 10-7, 55);
+                gravicsObject.DrawString(f, font1, Brushes.Blue, s * 10 - 7, 55);
                 if (i == 0)
                 {
                     gravicsObject.DrawString("AVR_waiting_time :", font1, Brushes.Blue, 50, 270);
@@ -244,18 +252,18 @@ namespace odo
                 prev_s = s;
             }
         }
-         public void Priority_Non_Preemptive()
+        public void Priority_Non_Preemptive()
         {
             // Declarations of our data structures
-            int[] pids          = new int[numProcesses];         // It will hold the pids in a sorted way according to priority values 
-            var finishedPids    = new Queue<int>(numProcesses);
-            int[] arrival       = new int[numProcesses];
-            int[] burst         = new int[numProcesses];
-            int[] priority      = new int[numProcesses];
-            int[] starting      = new int[numProcesses];
-            int[] finishing     = new int[numProcesses];
-            int[] waiting       = new int[numProcesses];
-            int[] turnAround    = new int[numProcesses];
+            int[] pids = new int[numProcesses];         // It will hold the pids in a sorted way according to priority values 
+            var finishedPids = new Queue<int>(numProcesses);
+            int[] arrival = new int[numProcesses];
+            int[] burst = new int[numProcesses];
+            int[] priority = new int[numProcesses];
+            int[] starting = new int[numProcesses];
+            int[] finishing = new int[numProcesses];
+            int[] waiting = new int[numProcesses];
+            int[] turnAround = new int[numProcesses];
             arrival = arrivals;
             burst = Durs.ToArray();
             for (int p = 0; p < numProcesses; p++)
@@ -270,24 +278,24 @@ namespace odo
                 int indMin = tempPriority.ToList().IndexOf(minVal);
                 tempPriority[indMin] = 99999999;
                 int indexMin = priority.ToList().IndexOf(minVal);
-                pids[p] = indexMin; 
+                pids[p] = indexMin;
             }
             // Here we have pids sorted by priority values
-            
+
             // Start simulating the real time operations 
-            for (int currentTime = 0; !jobs_done(pids); currentTime+=1)
+            for (int currentTime = 0; !jobs_done(pids); currentTime += 1)
             {
                 for (int p = 0; p < pids.Length; p++)
                 {
-                // loop over all processes to get the highest priority arrived job to be executed
+                    // loop over all processes to get the highest priority arrived job to be executed
                     int p_indx = pids[p];       // the pid of the next process
                     if (p_indx != -1 && arrival[p_indx] <= currentTime)
                     {
-                        starting[p_indx]    = currentTime;
-                        waiting[p_indx]     = currentTime - arrival[p_indx];
-                        currentTime         += burst[p_indx];
-                        finishing[p_indx]   = currentTime; 
-                        turnAround[p_indx]  = waiting[p_indx] + burst[p_indx];
+                        starting[p_indx] = currentTime;
+                        waiting[p_indx] = currentTime - arrival[p_indx];
+                        currentTime += burst[p_indx];
+                        finishing[p_indx] = currentTime;
+                        turnAround[p_indx] = waiting[p_indx] + burst[p_indx];
                         pids[p] = -1;  // it has just been executed
                         finishedPids.Enqueue(p_indx);
                         break;
@@ -301,18 +309,18 @@ namespace odo
             {
                 int p = finishedPids.Dequeue();
                 s = finishing[p];
-                
+
                 string text1 = "P" + p.ToString();
-                Rectangle rect = new Rectangle(2, 2, s*10, 50);
+                Rectangle rect = new Rectangle(2, 2, s * 10, 50);
                 System.Drawing.Graphics gravicsObject;
                 gravicsObject = this.CreateGraphics();
                 Pen blackPen = new Pen(System.Drawing.Color.Black, 3);
                 gravicsObject.DrawRectangle(blackPen, rect);
-                gravicsObject.DrawString(text1, font1, Brushes.Blue, (s+prev_s)*10-30, 10);
+                gravicsObject.DrawString(text1, font1, Brushes.Blue, (s + prev_s) * 10 - 30, 10);
                 string f = "" + s;
                 int avg_waiting = waiting.Sum() / waiting.Length;
                 string ff = avg_waiting.ToString(); //+ q.avr_time;
-                gravicsObject.DrawString(f, font1, Brushes.Blue, s*10, 50);
+                gravicsObject.DrawString(f, font1, Brushes.Blue, s * 10, 50);
                 if (i == 0)
                 {
                     gravicsObject.DrawString("AVR_waiting_time :", font1, Brushes.Blue, 50, 270);
@@ -321,47 +329,47 @@ namespace odo
                 //Console.WriteLine("The Values are {0}     {1}     {2}     {3}       {4}\n", p, starting[p], waiting[p], finishing[p], turnAround[p]);
             }
             prev_s = s;
-                //Console.ReadKey();
+            //Console.ReadKey();
         }
 
         public void button2_Click(object sender, EventArgs e)
         {
-           // button2_Click => FCFS
+            // button2_Click => FCFS
             FCFS q = new FCFS(input, Durs, arrivals);
             q.sets();
             s = q.arrival[0];
             int x = (q.dur[0] - q.arrival[0]) / 2;
             Font font1 = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Point);
             int prev_s = 0;
-           for (int i = 0; i <q.number; i++)
-           {
-               if (i != 0) x = (q.dur[i] - q.arrival[i-1]) / 2;
-               s += q.dur[i];
-               string text1 = q.flag[i];
-               Rectangle rect = new Rectangle(0, 0, s * 10, 50);
-               System.Drawing.Graphics gravicsObject;
-               gravicsObject = this.CreateGraphics();
-               Pen blackPen = new Pen(System.Drawing.Color.Black, 3);
-               gravicsObject.DrawRectangle(blackPen, rect);
-              gravicsObject.DrawString(text1, font1, Brushes.Blue,(s + prev_s) * 10 - 30,10);
-               string f = ""+s;
-               string ff = "" + q.avr_time;      
-               gravicsObject.DrawString(f, font1, Brushes.Blue, s*10-6, 50);
-               if (i == 0)
-               {
-                   gravicsObject.DrawString("AVR_waiting_time :", font1, Brushes.Blue, 50, 270);
-                   gravicsObject.DrawString(ff, font1, Brushes.Blue, 300, 270);
-               }
-           }
-           
+            for (int i = 0; i < q.number; i++)
+            {
+                if (i != 0) x = (q.dur[i] - q.arrival[i - 1]) / 2;
+                s += q.dur[i];
+                string text1 = q.flag[i];
+                Rectangle rect = new Rectangle(0, 0, s * 10, 50);
+                System.Drawing.Graphics gravicsObject;
+                gravicsObject = this.CreateGraphics();
+                Pen blackPen = new Pen(System.Drawing.Color.Black, 3);
+                gravicsObject.DrawRectangle(blackPen, rect);
+                gravicsObject.DrawString(text1, font1, Brushes.Blue, (s + prev_s) * 10 - 30, 10);
+                string f = "" + s;
+                string ff = "" + q.avr_time;
+                gravicsObject.DrawString(f, font1, Brushes.Blue, s * 10 - 6, 50);
+                if (i == 0)
+                {
+                    gravicsObject.DrawString("AVR_waiting_time :", font1, Brushes.Blue, 50, 270);
+                    gravicsObject.DrawString(ff, font1, Brushes.Blue, 300, 270);
+                }
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-             
+
             int[] arrivals_ = arriv.Split(',').Select(n => Convert.ToInt32(n)).ToArray();
             List<int> Durs = Durss.Split(',').Select(int.Parse).ToList();
-            RR q = new RR(input,100, Durs, arrivals_);
+            RR q = new RR(input, qunt, Durs, arrivals_);
             q.sets();
             s = q.arrival[0];
             int prev_s = 0;
@@ -375,10 +383,10 @@ namespace odo
                 Pen blackPen = new Pen(System.Drawing.Color.Black, 3);
                 Font font1 = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Point);
                 gravicsObject.DrawRectangle(blackPen, rect);
-                gravicsObject.DrawString(text1, font1, Brushes.Blue, (s+ prev_s) * 10 -30, 10);
+                gravicsObject.DrawString(text1, font1, Brushes.Blue, (s + prev_s) * 10 - 30, 10);
                 string f = "" + s;
-                string ff = "" + q.avr_time;      
-                gravicsObject.DrawString(f, font1, Brushes.Blue, s*10 -6, 50);
+                string ff = "" + q.avr_time;
+                gravicsObject.DrawString(f, font1, Brushes.Blue, s * 10 - 6, 50);
                 if (i == 0)
                 {
                     gravicsObject.DrawString("AVR_waiting_time :", font1, Brushes.Blue, 50, 270);
@@ -387,6 +395,11 @@ namespace odo
             }
         }
 
-        }
-}
+        private void label6_Click(object sender, EventArgs e)
+        {
 
+        }
+
+       
+    }
+}
